@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Person from "./Person";
 
-import { randomInt } from "../helpers/Helpers";
+import { randomInt, boundedVal } from "../helpers/Helpers";
 
 class Room extends Component {
   constructor(props) {
@@ -21,6 +21,17 @@ class Room extends Component {
     return (
       <div className="room">
         <div className="people">{this.state.people}</div>
+        <Person
+          key={"player"}
+          x={boundedVal(0, 98)(
+            this.props.position.x / this.props.elementDimensions.width * 100
+          )}
+          y={boundedVal(0, 95)(
+            (this.props.elementDimensions.height - this.props.position.y) /
+              this.props.elementDimensions.height *
+              100
+          )}
+        />
       </div>
     );
   }

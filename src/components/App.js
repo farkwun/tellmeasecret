@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactCursorPosition from "react-cursor-position";
+
 import logo from "../data/img/logo.svg";
 
 import Room from "./Room";
@@ -8,7 +10,9 @@ class App extends Component {
     return (
       <div className="App centered">
         tell me a secret
-        <Room />
+        <ReactCursorPosition>
+          <Room />
+        </ReactCursorPosition>
       </div>
     );
   }
