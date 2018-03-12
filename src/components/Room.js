@@ -9,8 +9,9 @@ class Room extends Component {
     super(props);
     let people = [];
     for (let i = 0; i < randomInt(30, 60); i++) {
-      people.push(<Person key={i} />);
+      people.push(<Person key={i} x={randomInt(0, 90)} y={randomInt(0, 90)} />);
     }
+
     this.state = {
       people
     };
@@ -19,7 +20,7 @@ class Room extends Component {
   render() {
     return (
       <div className="room">
-        <div className="thing">{this.state.people}</div>
+        <div className="people">{this.state.people}</div>
       </div>
     );
   }
