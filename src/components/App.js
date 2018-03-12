@@ -6,7 +6,7 @@ import Room from "./Room";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App centered">
         tell me a secret
         <Room />
       </div>
