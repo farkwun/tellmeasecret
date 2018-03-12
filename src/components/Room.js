@@ -27,7 +27,7 @@ class Room extends Component {
       )
     };
 
-    const people = range(randomInt(90, 200)).map(i => ({
+    const people = range(150).map(i => ({
       x: randomInt(2, 90),
       y: randomInt(2, 90)
     }));

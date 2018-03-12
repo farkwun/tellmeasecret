@@ -30,12 +30,32 @@ body {
   height: 10;
 }
 
-.discoball {
+.disco-box{
   position: absolute;
   left: 0;
   right: 0;
   margin: 100px auto;
+  height:300px;
+  width:300px;
+  animation: spin-right 10s linear infinite;
+}
+
+.discoball {
+  margin: auto;
+  left: 0;
+  right: 0;
   width: 100px;
   height: 100px;
   border-radius: 50px;
+}
+
+
+@-webkit-keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
