@@ -34,7 +34,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 100px auto;
+  margin: 200px auto;
   height:300px;
   width:300px;
 }
@@ -46,4 +46,33 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50px;
+  box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+  animation: pulse 0.5s infinite;
+
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 300px rgba(204,169,44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 300px rgba(204,169,44, 0);
+    box-shadow: 0 0 0 300px rgba(204,169,44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
 }
