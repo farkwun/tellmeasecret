@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App centered">
-        tell me a secret
+        nobody will fucking dance with me
         <ReactCursorPosition>
           <Room />
         </ReactCursorPosition>
