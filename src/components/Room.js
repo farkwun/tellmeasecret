@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Person from "./Person";
+import DiscoBall from "./DiscoBall";
 
 import {
   randomInt,
@@ -9,157 +10,9 @@ import {
   permuteSlightly
 } from "../helpers/Helpers";
 
-const STEP = 0.2;
+import { CSS_COLOR_NAMES } from "../data/static";
 
-const CSS_COLOR_NAMES = [
-  "AliceBlue",
-  "AntiqueWhite",
-  "Aqua",
-  "Aquamarine",
-  "Azure",
-  "Beige",
-  "Bisque",
-  "Black",
-  "BlanchedAlmond",
-  "Blue",
-  "BlueViolet",
-  "Brown",
-  "BurlyWood",
-  "CadetBlue",
-  "Chartreuse",
-  "Chocolate",
-  "Coral",
-  "CornflowerBlue",
-  "Cornsilk",
-  "Crimson",
-  "Cyan",
-  "DarkBlue",
-  "DarkCyan",
-  "DarkGoldenRod",
-  "DarkGray",
-  "DarkGrey",
-  "DarkGreen",
-  "DarkKhaki",
-  "DarkMagenta",
-  "DarkOliveGreen",
-  "Darkorange",
-  "DarkOrchid",
-  "DarkRed",
-  "DarkSalmon",
-  "DarkSeaGreen",
-  "DarkSlateBlue",
-  "DarkSlateGray",
-  "DarkSlateGrey",
-  "DarkTurquoise",
-  "DarkViolet",
-  "DeepPink",
-  "DeepSkyBlue",
-  "DimGray",
-  "DimGrey",
-  "DodgerBlue",
-  "FireBrick",
-  "FloralWhite",
-  "ForestGreen",
-  "Fuchsia",
-  "Gainsboro",
-  "GhostWhite",
-  "Gold",
-  "GoldenRod",
-  "Gray",
-  "Grey",
-  "Green",
-  "GreenYellow",
-  "HoneyDew",
-  "HotPink",
-  "IndianRed",
-  "Indigo",
-  "Ivory",
-  "Khaki",
-  "Lavender",
-  "LavenderBlush",
-  "LawnGreen",
-  "LemonChiffon",
-  "LightBlue",
-  "LightCoral",
-  "LightCyan",
-  "LightGoldenRodYellow",
-  "LightGray",
-  "LightGrey",
-  "LightGreen",
-  "LightPink",
-  "LightSalmon",
-  "LightSeaGreen",
-  "LightSkyBlue",
-  "LightSlateGray",
-  "LightSlateGrey",
-  "LightSteelBlue",
-  "LightYellow",
-  "Lime",
-  "LimeGreen",
-  "Linen",
-  "Magenta",
-  "Maroon",
-  "MediumAquaMarine",
-  "MediumBlue",
-  "MediumOrchid",
-  "MediumPurple",
-  "MediumSeaGreen",
-  "MediumSlateBlue",
-  "MediumSpringGreen",
-  "MediumTurquoise",
-  "MediumVioletRed",
-  "MidnightBlue",
-  "MintCream",
-  "MistyRose",
-  "Moccasin",
-  "NavajoWhite",
-  "Navy",
-  "OldLace",
-  "Olive",
-  "OliveDrab",
-  "Orange",
-  "OrangeRed",
-  "Orchid",
-  "PaleGoldenRod",
-  "PaleGreen",
-  "PaleTurquoise",
-  "PaleVioletRed",
-  "PapayaWhip",
-  "PeachPuff",
-  "Peru",
-  "Pink",
-  "Plum",
-  "PowderBlue",
-  "Purple",
-  "Red",
-  "RosyBrown",
-  "RoyalBlue",
-  "SaddleBrown",
-  "Salmon",
-  "SandyBrown",
-  "SeaGreen",
-  "SeaShell",
-  "Sienna",
-  "Silver",
-  "SkyBlue",
-  "SlateBlue",
-  "SlateGray",
-  "SlateGrey",
-  "Snow",
-  "SpringGreen",
-  "SteelBlue",
-  "Tan",
-  "Teal",
-  "Thistle",
-  "Tomato",
-  "Turquoise",
-  "Violet",
-  "Wheat",
-  "White",
-  "WhiteSmoke",
-  "Yellow",
-  "YellowGreen"
-];
+const STEP = 0.2;
 
 class Room extends Component {
   constructor(props) {
@@ -185,7 +38,7 @@ class Room extends Component {
 
     setInterval(() => {
       this.changeColor();
-    }, 400);
+    }, 100);
 
     const color =
       CSS_COLOR_NAMES[Math.floor(Math.random() * CSS_COLOR_NAMES.length)];
@@ -253,7 +106,8 @@ class Room extends Component {
     });
 
     return (
-      <div className="room" style={{ backgroundColor: this.state.color }}>
+      <div className="room">
+        <DiscoBall color={this.state.color} />
         <div className="people">{people}</div>
         <Person key={"player"} x={this.player.x} y={this.player.y} />
       </div>
